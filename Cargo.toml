@@ -1,0 +1,23 @@
+[package]
+name = "discord-bot"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = { version = "0.4" }
+tokio = { version = "1.32", features = ["macros", "rt-multi-thread"] }
+serenity = { default-features = false, features = [
+  "client",
+  "gateway",
+  "model",
+  "rustls_backend",
+  "standard_framework",
+], version = "0.11" }
+yahoo_finance_api = "2.0"
+scraper = "0.17"
+reqwest = { version = "0.11" }
+dotenv = "0.15.0"
+chatgpt_rs = { version = "1.2.0", features = ["streams"] }
+
