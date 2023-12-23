@@ -1,0 +1,11 @@
+- name: Run playbook
+  env:
+    AWS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+    AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
+  uses: dawidd6/action-ansible-playbook@v2
+  with:
+    # Required, playbook filepath
+    playbook: deploy.yml
+    directory: ./config/deploy/deploy.yml
+    # Optional, SSH private key
+    key: ${{secrets.SSH_PRIVATE_KEY}}
