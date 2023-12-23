@@ -1,4 +1,4 @@
-# discord-bot
+# discord_bot
 
 Bot para o discord, integração com ChatGPT, Yahoo Finance e WebScraper de site de notícias
 
