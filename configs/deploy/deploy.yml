@@ -1,12 +1,12 @@
 ---
 - name: "Login no ECR e implantação do container"
-  hosts: vitorlivi.online
+  hosts: ssh.vitorlivi.online
   become: true
   vars:
     aws_access_key: "{{ AWS_KEY_ID }}"
     aws_secret_key: "{{ AWS_SECRET_KEY }}"
     aws_region: "us-east-2"
-    image_name: "seu_ecr_image"
+    image_name: "discord-bot:release"
     container_name: "discord-bot"
     ecr_url: "271439737792.dkr.ecr.us-east-2.amazonaws.com"
 
