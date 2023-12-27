@@ -5,7 +5,7 @@ COPY . .
 
 RUN cargo build --release
 
-FROM debian:buster-slim
+FROM rust:latest
 
 WORKDIR /usr/app/
 
