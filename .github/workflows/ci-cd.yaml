@@ -63,7 +63,7 @@ jobs:
         docker build . -f configs/docker/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
-  deploy:
+  ansible:
     name: Run playbook
     needs: [build]
       env:
