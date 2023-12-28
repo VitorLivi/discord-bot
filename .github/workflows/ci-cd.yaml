@@ -4,6 +4,7 @@ on:
       - main
 
 name: Production CI/CD
+
   deploy:
     name: Run playbook
     runs-on: ubuntu-latest
