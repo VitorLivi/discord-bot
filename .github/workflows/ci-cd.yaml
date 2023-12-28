@@ -26,4 +26,4 @@ jobs:
             [all]
             ssh.vitorlivi.online ansible_ssh_host=ssh.vitorlivi.online ansible_connection=ssh
           options: |
-            --extra-vars "ansible_ssh_user=${{ secrets.SSH_USER }}" --extra-vars "ansible_ssh_pass=${{ secrets.SSH_PASS }}"
+            --extra-vars "ansible_user=${{ secrets.SSH_USER }}" --extra-vars "ansible_ssh_pass=${{ secrets.SSH_PASS }}"
