@@ -26,3 +26,4 @@ jobs:
             ansible_connection=ssh
             ansible_user=${{ secrets.SSH_USER }}
             ansible_ssh_pass=${{ secrets.SSH_PASS }}
+          hosts: 191.37.242.16
