@@ -22,9 +22,7 @@ jobs:
         with:
           playbook: deploy.yml
           directory: configs/deploy
-          key: ${{secrets.SSH_PRIVATE_KEY}}
-          inventory: |
-            [all:vars]
+          extra-vars: |
             ansible_connection=ssh
-            remote_user: "{{ lookup('env', 'SSH_USER') }}"
-            ansible_ssh_pass: "{{ lookup('env', 'SSH_PASS') }}"
+            ansible_user=${{ secrets.SSH_USER }}
+            ansible_ssh_pass=${{ secrets.SSH_PASS }}
