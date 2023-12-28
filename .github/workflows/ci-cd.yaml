@@ -5,6 +5,7 @@ on:
 
 name: Production CI/CD
 
+jobs:
   deploy:
     name: Run playbook
     runs-on: ubuntu-latest
