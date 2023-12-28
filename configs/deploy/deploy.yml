@@ -11,17 +11,17 @@
     ecr_url: "271439737792.dkr.ecr.us-east-2.amazonaws.com"
 
   tasks:
-    - name: "Logar no ECR"
-      community.aws.ecr_login:
-        aws_access_key: "{{ aws_access_key }}"
-        aws_secret_key: "{{ aws_secret_key }}"
+    - name: Fazer login no Amazon ECR
+      become: yes
+      become_user: ec2-user
+      vars:
         region: "{{ aws_region }}"
-
-    - name: "Fazer pull da imagem do ECR"
-      docker_image:
-        name: "{{ ecr_url }}/{{ image_name }}"
-        source: pull
-
+      environment:
+        AWS_ACCESS_KEY_ID: "{{ aws_access_key }}"
+        AWS_SECRET_ACCESS_KEY: "{{ aws_secret_key }}"
+      docker_login:
+        registry_url: "{{ ecr_url }}"
+    
     - name: "Implantar o container"
       docker_container:
         name: "{{ container_name }}"
