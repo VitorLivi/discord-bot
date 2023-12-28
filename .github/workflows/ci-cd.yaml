@@ -82,7 +82,7 @@ jobs:
           SSH_PASS: ${{ secrets.SSH_PASS }}
         with:
           playbook: deploy.yml
-          directory: configs/deploy/deploy.yml
+          directory: configs/deploy
           key: ${{secrets.SSH_PRIVATE_KEY}}
           inventory: |
             [all:vars]
