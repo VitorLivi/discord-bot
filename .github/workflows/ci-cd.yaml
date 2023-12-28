@@ -22,8 +22,6 @@ jobs:
         with:
           playbook: deploy.yml
           directory: configs/deploy
-          extra-vars: |
-            ansible_connection=ssh
-            ansible_user=${{ secrets.SSH_USER }}
-            ansible_ssh_pass=${{ secrets.SSH_PASS }}
-          hosts: 191.37.242.16
+          inventory: |
+            [all]
+            ssh.vitorlivi.online ansible_ssh_host=ssh.vitorlivi.online ansible_connection=ssh ansible_ssh_user={{ secrets.SSH_USER }} ansible_ssh_pass={{ secrets.SSH_PASS }}
