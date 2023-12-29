@@ -14,14 +14,13 @@ jobs:
         uses: actions/checkout@v2
       - name: Deploy container
         uses: dawidd6/action-ansible-playbook@v2
-        env:
-          AWS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
-          AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
-          SSH_USER: ${{ secrets.SSH_USER }}
-          SSH_PASS: ${{ secrets.SSH_PASS }}
         with:
           playbook: deploy.yml
           directory: configs/deploy
           inventory: |
             [all]
             ssh.vitorlivi.online ansible_ssh_host=ssh.vitorlivi.online ansible_connection=ssh ansible_ssh_user=${{ secrets.SSH_USER }} ansible_ssh_pass=${{ secrets.SSH_PASS }} ansible_become_pass=${{ secrets.SSH_PASS }}
+
+            [all:vars]
+            AWS_KEY_ID=${{ secrets.AWS_KEY_ID }}
+            AWS_SECRET_KEY=${{ secrets.AWS_SECRET_KEY }}
