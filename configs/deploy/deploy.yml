@@ -1,6 +1,6 @@
 ---
 - name: "Login no ECR e implantação do container"
-  hosts: ssh.vitorlivi.online
+  hosts: all
   become: true
   vars:
     aws_access_key: "{{ AWS_KEY_ID }}"
