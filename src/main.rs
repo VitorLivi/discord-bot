@@ -15,6 +15,7 @@ const HELP_MESSAGE: &str = "
     !help - Mostra essa mensagem
     !ping - Pong!
     !quotes - Mostra a cotação de uma ação
+    !tabnews - Mostra as últimas notícias do tabnews
     !news - Mostra as últimas notícias do mercado financeiro
     !gpt - Pergunte algo para o mula-bot
 ";
