@@ -16,8 +16,8 @@
       vars:
         region: "{{ aws_region }}"
       environment:
-        AWS_ACCESS_KEY_ID: "{{ aws_access_key }}"
-        AWS_SECRET_ACCESS_KEY: "{{ aws_secret_key }}"
+        username: "{{ aws_access_key }}"
+        password: "{{ aws_secret_key }}"
       docker_login:
         registry_url: "{{ ecr_url }}"
     
