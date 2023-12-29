@@ -8,6 +8,7 @@ use serenity::{async_trait, model::channel::Message, prelude::*};
 use discord_bot::commands::gpt::GPT_COMMAND;
 use discord_bot::commands::news::NEWS_COMMAND;
 use discord_bot::commands::quotes::QUOTES_COMMAND;
+use discord_bot::commands::tabnews::TABNEWS_COMMAND;
 
 const HELP_MESSAGE: &str = "
     Comandos do mula-bot:
@@ -19,7 +20,7 @@ const HELP_MESSAGE: &str = "
 ";
 
 #[group]
-#[commands(ping, help, quotes, news, gpt)]
+#[commands(ping, help, quotes, news, gpt, tabnews)]
 struct General;
 
 struct Handler;

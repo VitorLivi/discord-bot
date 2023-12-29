@@ -2,4 +2,5 @@
 
 pub mod commands;
 pub mod gpt;
+pub mod tabnews;
 pub mod web_scraper;
