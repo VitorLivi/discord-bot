@@ -13,11 +13,9 @@
   tasks:
     - name: Fazer login no Amazon ECR
       become: yes
-      username: "{{ aws_access_key }}"
-      password: "{{ aws_secret_key }}"
-      vars:
-        region: "{{ aws_region }}"
       docker_login:
+        username: "{{ aws_access_key }}"
+        password: "{{ aws_secret_key }}"
         registry_url: "{{ ecr_url }}"
     
     - name: "Implantar o container"
