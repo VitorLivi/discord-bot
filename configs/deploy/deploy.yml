@@ -13,7 +13,6 @@
   tasks:
     - name: Fazer login no Amazon ECR
       become: yes
-      become_user: ec2-user
       vars:
         region: "{{ aws_region }}"
       environment:
