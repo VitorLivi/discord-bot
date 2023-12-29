@@ -14,7 +14,7 @@
     - name: Fazer login no Amazon ECR
       become: yes
       docker_login:
-        username: "{{ aws_access_key }}"
+        username: pipeline
         password: "{{ aws_secret_key }}"
         registry_url: "{{ ecr_url }}"
     
