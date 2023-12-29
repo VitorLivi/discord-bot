@@ -11,13 +11,13 @@
     ecr_url: "271439737792.dkr.ecr.us-east-2.amazonaws.com"
 
   tasks:
-    - name: Configure AWS CLI
-      shell: "aws configure set aws_access_key_id {{ aws_access_key }} --profile pipeline && aws configure set aws_secret_access_key {{ aws_secret_key }} --profile pipeline && aws configure set region {{ aws_region }} --profile pipeline && aws configure set output "text" --profile pipeline"
+    - name: "Configure AWS CLI"
+      shell: "aws configure set aws_access_key_id {{ aws_access_key }} --profile pipeline && aws configure set aws_secret_access_key {{ aws_secret_key }} --profile pipeline && aws configure set region {{ aws_region }} --profile pipeline"
     
-    - name: Login into ECR Registry
+    - name: "Login into ECR Registry"
       shell: "aws ecr get-login-password --region {{ aws_region }} | docker login --username AWS --password-stdin {{ ecr_url }}"
     
-    - name: "Implantar o container"
+    - name: "Deploy container"
       docker_container:
         name: "{{ container_name }}"
         image: "{{ ecr_url }}/{{ image_name }}"
