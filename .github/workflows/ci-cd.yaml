@@ -84,5 +84,7 @@ jobs:
             ssh.vitorlivi.online ansible_ssh_host=ssh.vitorlivi.online ansible_connection=ssh ansible_ssh_user=${{ secrets.SSH_USER }} ansible_ssh_pass=${{ secrets.SSH_PASS }} ansible_become_pass=${{ secrets.SSH_PASS }} ansible_port=22022
 
             [all:vars]
+            CHAT_GPT_TOKEN=${{ secrets.CHAT_GPT_TOKEN }}
+            DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}
             AWS_KEY_ID=${{ secrets.AWS_KEY_ID }}
             AWS_SECRET_KEY=${{ secrets.AWS_SECRET_KEY }}

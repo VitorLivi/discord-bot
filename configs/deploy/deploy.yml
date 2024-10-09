@@ -9,6 +9,10 @@
     image_name: "discord-bot:release"
     container_name: "discord-bot"
     ecr_url: "271439737792.dkr.ecr.us-east-2.amazonaws.com"
+    container_env:
+      CHAT_GPT_TOKEN: "{{ CHAT_GPT_TOKEN }}"
+      DISCORD_TOKEN: "{{ DISCORD_TOKEN }}"
+
   tasks:
     - name: "Configure AWS CLI"
       shell: "aws configure set aws_access_key_id {{ aws_access_key }} --profile pipeline && aws configure set aws_secret_access_key {{ aws_secret_key }} --profile pipeline && aws configure set region {{ aws_region }} --profile pipeline"
