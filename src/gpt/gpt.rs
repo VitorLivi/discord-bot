@@ -17,7 +17,7 @@ impl Gpt {
                 ModelConfigurationBuilder::default()
                     .temperature(1.0)
                     .max_tokens(max_tokens)
-                    .engine(ChatGPTEngine::Gpt35Turbo)
+                    .engine(ChatGPTEngine::Custom("chatgpt-4o-latest"))
                     .build()
                     .unwrap(),
             )
