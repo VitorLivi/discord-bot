@@ -53,7 +53,7 @@ pub async fn quotes(ctx: &Context, msg: &Message) -> CommandResult {
         }
     }
 
-    let provider = yahoo::YahooConnector::new();
+    let provider = yahoo::YahooConnector::new().unwrap();
     let response = provider.get_latest_quotes(stock_code.as_ref(), "1d").await;
 
     let last_close_quote;
