@@ -71,7 +71,7 @@ impl Gpt {
 
         match result {
             Ok(response) => {
-                let chunks = Gpt::split_text_into_chunks(&response.message().content, 500);
+                let chunks = Gpt::split_text_into_chunks(&response.message().content, 1000);
 
                 for chunk in chunks {
                     msg.reply(ctx, format!("{}", chunk)).await;
