@@ -1,6 +1,6 @@
 use chatgpt::prelude::*;
 use serenity::{model::channel::Message, prelude::*};
-use std::env;
+use std::{env, time::Duration};
 
 pub struct Gpt {
     client: ChatGPT,
@@ -18,6 +18,7 @@ impl Gpt {
                     .temperature(1.0)
                     .max_tokens(max_tokens)
                     .engine(ChatGPTEngine::Custom("chatgpt-4o-latest"))
+                    .timeout(Duration::from_secs(25))
                     .build()
                     .unwrap(),
             )
